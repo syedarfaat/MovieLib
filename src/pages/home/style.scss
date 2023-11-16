@@ -1,0 +1,21 @@
+* {
+    color: white;
+}
+
+@import '../../mixins.scss';
+.coursel-section {
+    @include md {
+        margin-bottom: 70px;
+    }
+    .content-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .coursel-title {
+        font-size: 24px;
+        color: white;
+        font-weight: normal;
+    }
+}
