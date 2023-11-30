@@ -1,0 +1,75 @@
+@import '../../../mixins.scss';
+.videos-carousel {
+    margin-bottom: 60px;
+    .content-wrapper {
+        .title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        .video-strip {
+            width: 100%;
+            display: flex;
+            gap: 20px;
+            overflow-x: scroll;
+            .video-item {
+                flex-shrink: 0;
+                width: 300px;
+                .videoTitle {
+                    color: white;
+                    font-size: 14px;
+                    line-height: 20px;
+                    margin-top: 5px;
+                    @include md {
+                        font-size: 16px;
+                        margin-top: 10px;
+                    }
+                }
+                .thumbnail {
+                    position: relative;
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        border-radius: 10px;
+                    }
+                    svg {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 50px;
+                        height: 50px;
+                    }
+                    .triangle {
+                        stroke-dasharray: 240;
+                        stroke-dashoffset: 480;
+                        stroke: white;
+                        transform: translateY(0);
+                        transition: all 0.7s ease-in-out;
+                    }
+                    .circle {
+                        stroke: white;
+                        stroke-dasharray: 650;
+                        stroke-dashoffset: 1300;
+                        transition: all 0.5s ease-in-out;
+                    }
+                    &:hover {
+                        img {
+                            opacity: 0.5;
+                        }
+                        .triangle {
+                            stroke-dashoffset: 0;
+                            opacity: 1;
+                            stroke: var(--pink);
+                            animation: trailorPlay 0.7s ease-in-out;
+                        }
+                        .circle {
+                            stroke-dashoffset: 0;
+                            stroke: var(--pink);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

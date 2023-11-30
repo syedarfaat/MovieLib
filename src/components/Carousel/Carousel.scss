@@ -25,10 +25,10 @@
             }
         }
         .leftNav {
-            left: 20px
+            left: 0;
         }
         .rightNav {
-            right: 20px;
+            right: 0;
         }
         .loadingskeleton {
             width: 100%;
@@ -93,6 +93,7 @@
             overflow-x: scroll;
             overflow-y: hidden;
             .content-card {
+                cursor: pointer;
                 width: 125px;
                 @include md {
                     width: calc(25% - 15px);

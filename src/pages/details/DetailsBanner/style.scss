@@ -1,0 +1,216 @@
+@import '../../../mixins.scss';
+.detailsBanner {
+    position: relative;
+    width: 100%;
+    padding-top: 80px;
+    margin-bottom: 50px;
+    @include md {
+        margin-bottom: 0;
+        min-height: 700px;
+    }
+    .backgroundImg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.1;
+        overflow: hidden;
+        z-index: -1;
+        .lazy-load-image-background {
+            width: 100%;
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+    .opacityLayer {
+        z-index: -1;
+        width: 100%;
+        height: 250px;
+        background: linear-gradient( 180deg, rgba(4, 21, 45, 0) 0%, #04152d 79.17%);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .details {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        padding: 0 20px;
+        gap: 20px;
+        z-index: 0;
+        ;
+        @include md {
+            max-width: 1200px;
+            gap: 40px;
+            flex-direction: row;
+        }
+        .left {
+            max-width: 350px;
+            .posterImg {
+                border-radius: 14px;
+                aspect-ratio: 1/1.5;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .right {
+            .movieDetails {
+                display: flex;
+                flex-direction: column;
+                .title {
+                    font-size: 28px;
+                    line-height: 40px;
+                    font-weight: 500;
+                    @include md {
+                        font-size: 34px;
+                        line-height: 44px;
+                    }
+                }
+                .description {
+                    font-size: 16px;
+                    line-height: 24px;
+                    margin-bottom: 15px;
+                    font-style: italic;
+                    opacity: 0.5;
+                    @include md {
+                        font-size: 20px;
+                        line-height: 28px;
+                    }
+                }
+                .genres {
+                    display: flex;
+                    gap: 5px;
+                    flex-flow: row wrap;
+                    .genre {
+                        border-radius: 10px;
+                        background-color: var(--pink);
+                        padding: 3px 5px;
+                        border-radius: 5px;
+                    }
+                }
+                .circles {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 10px;
+                    align-items: center;
+                    margin: 30px 0;
+                    .ratings {
+                        width: 80px;
+                        .CircularProgressbar-text {
+                            alignment-baseline: middle;
+                            font-size: 34px;
+                            text-anchor: middle;
+                            font-weight: 700;
+                            fill: white
+                        }
+                        .CircularProgressbar-trail {
+                            stroke: transparent;
+                        }
+                    }
+                    .playBtn {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        cursor: pointer;
+                        gap: 15px;
+                        svg {
+                            width: 60px;
+                            @include md {
+                                width: 80px;
+                            }
+                        }
+                        .watchTrailer {
+                            font-size: 20px;
+                            transition: all 0.7s ease-in-out;
+                        }
+                        .triangle {
+                            stroke-dasharray: 240;
+                            stroke-dashoffset: 480;
+                            stroke: white;
+                            transform: translateY(0);
+                            transition: all 0.7s ease-in-out;
+                        }
+                        .circle {
+                            stroke: white;
+                            stroke-dasharray: 650;
+                            stroke-dashoffset: 1300;
+                            transition: all 0.5s ease-in-out;
+                        }
+                        &:hover {
+                            .watchTrailer {
+                                color: var(--pink);
+                            }
+                            .triangle {
+                                stroke-dashoffset: 0;
+                                opacity: 1;
+                                stroke: var(--pink);
+                                animation: trailorPlay 0.7s ease-in-out;
+                            }
+                            .circle {
+                                stroke-dashoffset: 0;
+                                stroke: var(--pink);
+                            }
+                        }
+                    }
+                }
+                .overview {
+                    margin-bottom: 25px;
+                    .overviewTitle {
+                        font-size: 20px;
+                    }
+                    .overviewData {
+                        margin-top: 10px;
+                        font-size: 12px;
+                        max-width: 70%;
+                    }
+                }
+                .onePlus {
+                    display: flex;
+                    align-items: center;
+                    flex-flow: wrap;
+                    gap: 5px;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                    @include md {
+                        gap: 10px;
+                    }
+                    .data {
+                        border: none;
+                        gap: 5px;
+                        padding: 6px 0px;
+                        @include md {
+                            gap: 10px
+                        }
+                    }
+                }
+                .data {
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                    padding: 15px 0;
+                    display: flex;
+                    gap: 5px;
+                    @include md {
+                        gap: 10px;
+                    }
+                }
+                .value {
+                    margin-right: 10px;
+                    opacity: 0.5;
+                    line-height: 24px;
+                }
+                .dataName {
+                    font-weight: 600;
+                    opacity: 1;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+}

@@ -21,7 +21,6 @@ export default function Header() {
     const handleScroll=()=> {
       const currentScrollPosition=window.scrollY;
       if (currentScrollPosition > lastScroll && !mobileMenu) {
-        console.log(lastScroll);
         setShow('hide');
       } else {
         setShow('show');
