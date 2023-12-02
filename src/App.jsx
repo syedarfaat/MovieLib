@@ -6,12 +6,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { getApiConfiguration, getGenres } from './store/homeSlice'
 import Home from './pages/home/Home'
-import Header from './components/header/header'
+import Header from './components/header/Header'
 import Details from './pages/details/Details'
-import SearchResult from './pages/searchResult/searchResult'
-import Footer from './components/footer/footer'
+import SearchResult from './pages/searchResult/SearchResult'
+import Footer from './components/footer/Footer'
 import Explore from './pages/explore/Explore'
-import PageNotFound from './pages/404/pageNotFound'
+import PageNotFound from './pages/404/PageNotFound'
 
 function App() {
 
