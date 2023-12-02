@@ -3,7 +3,7 @@ import useFetch from '../../../hooks/useFetch';
 import { useParams } from 'react-router-dom';
 import Img from '../../../components/LazyImageLoader/Img';
 import dayjs from "dayjs";
-import { PlayBtn } from './playBtn';
+import { PlayBtn } from './PlayBtn';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import { useSelector } from 'react-redux';
 import VideoPopUp from '../../../components/videoPopUp/VideoPopUp';
