@@ -1,7 +1,9 @@
 @import '../../mixins.scss';
 .footer {
     width: 100%;
+    color: white;
     background-color: var(--black3);
+    bottom: 0;
     .content-wrapper {
         padding: 40px 15px;
         display: flex;

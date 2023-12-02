@@ -1,5 +1,6 @@
     @import '../../mixins.scss';
     .carousel {
+        color: white;
         .content-wrapper {
             position: relative;
         }
@@ -25,10 +26,12 @@
             }
         }
         .leftNav {
-            left: 0;
+            fill: white;
+            left: 22px;
         }
         .rightNav {
-            right: 0;
+            right: 22px;
+            fill: white;
         }
         .loadingskeleton {
             width: 100%;
@@ -101,7 +104,6 @@
                 @include lg {
                     width: calc(20% - 16px);
                 }
-                width: calc(25% - 10px);
                 flex-shrink: 0;
                 .img {
                     position: relative;

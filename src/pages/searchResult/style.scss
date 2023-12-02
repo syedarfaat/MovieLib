@@ -1,0 +1,22 @@
+@import '../../mixins.scss';
+.search-result {
+    padding-top: 100px;
+    padding-bottom: 80px;
+    .content-wrapper {
+        .content {
+            .sectionHeading {
+                font-size: 24px;
+                font-weight: 300;
+                margin-bottom: 30px;
+            }
+            .items {
+                width: 100%;
+                display: flex;
+                gap: 50px 15px;
+                flex-flow: wrap;
+                flex-grow: 1;
+                flex-shrink: 0;
+            }
+        }
+    }
+}

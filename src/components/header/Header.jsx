@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './header.scss'
-import MovixLogo from '../../assets/movix-logo.svg'
+import MovixLogo from '../../assets/movix-logo.png'
 import {  HiOutlineSearch} from "react-icons/hi";
 import { SlMenu } from "react-icons/sl";
 import { VscChromeClose } from "react-icons/vsc";
@@ -50,7 +50,7 @@ export default function Header() {
   }
   
   const NavigationHandler=((type)=>{
-    if(type=='movies'||type=='tv-shows')
+    if(type=='movie'||type=='tv')
      navigate(`/explore/${type}`)
     else if(type=='/')
     {
@@ -64,11 +64,17 @@ export default function Header() {
     <div className= {`header ${mobileMenu?"mobileView":""} ${searchOn?"search":""} ${show}`}>
     <div className="wrapper">
       <div className="left">
-        <div className="logo" onClick={()=>NavigationHandler('/')}><img src={MovixLogo}/></div>
+        <div className="logo" onClick={()=>NavigationHandler('/')}>
+        <div className="imgcontainer">
+        <img src={MovixLogo}/>
+
+        </div>  
+        </div>
+
       </div>
       <ul className="menuItems">
-        <li className="menuItem" onClick={()=>{NavigationHandler("movies")}}>Movies</li>
-        <li className="menuItem" onClick={()=>{NavigationHandler("tv-shows")}}>TV Shows</li>
+        <li className="menuItem" onClick={()=>{NavigationHandler("movie")}}>Movies</li>
+        <li className="menuItem" onClick={()=>{NavigationHandler("tv")}}>TV Shows</li>
         <li className="menuItem" onClick={OpenSearchBar}><HiOutlineSearch/></li>
       </ul>
 
