@@ -25,20 +25,7 @@ const SearchResult = () => {
     })
   }
 
-  const loadMoreObjects=()=>{
-    fetchDataFromApi(`/search/multi?query=${query}&page=${pageNumber}`).then((res)=>{
-      if(data.res){
-      setData({...data,results:[...data.results,...res.results]})
-      console.log('in')
-      console.log(data)
-      }
-      else{
-        setData(res)
-      }
-      setPage(page=>page+1)
-      setloading(false)
-    })
-  }
+
 
   useEffect(()=>{
   InitialFetch()
@@ -54,12 +41,7 @@ const SearchResult = () => {
         <div className="sectionHeading">
             { data?.results.length>0? `Search results for '${query}'`:`No results found for '${query}'`}
         </div>
-        <InfiniteScroll
-            next={loadMoreObjects}
-            dataLength={data?.results.length || 0} // Corrected the dataLength prop
-            hasMore={data?.total_pages<=pageNumber}
-            className="items"
-          >
+        <div className="items">
         
 
         {data?.results.map(item=>(
@@ -68,8 +50,7 @@ const SearchResult = () => {
 
         }
         
-        </InfiniteScroll>
-      
+        </div>
         
       </div>
       </ContentWrapper>
