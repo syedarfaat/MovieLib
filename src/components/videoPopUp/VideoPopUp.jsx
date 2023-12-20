@@ -8,9 +8,9 @@ const VideoPopUp = ({show,setShow,Vid,setVid,position}) => {
         setVid(null)
     }
   return (
-    <div  className={`videoPopUp ${show?'show':''}`}>
+    <div style={{top:`${position?position:0}`}} className={`videoPopUp ${show?'show':''}`}>
       <div className="opacity-layer" onClick={()=>closeVid()}></div>
-      <div className="videoBox" style={{marginTop:window.scrollY}}>
+      <div className="videoBox">
         <span className="close" onClick={()=>closeVid()}>close</span>
         <ReactPlayer
         url={`https://www.youtube.com/watch?v=${Vid}`}
